@@ -28,6 +28,7 @@ public class MainServlet extends HttpServlet {
             if (method.equals("GET") && path.equals("/api/posts")) {
                 controller.all(resp);
                 return;
+
             }
             if (method.equals("GET") && path.matches("/api/posts/\\d+")) {
                 // easy way
@@ -35,6 +36,9 @@ public class MainServlet extends HttpServlet {
                 controller.getById(id, resp);
                 return;
             }
+            System.out.println(path);
+            System.out.println(method);
+            System.out.println((path.equals("/api/posts")));
             if (method.equals("POST") && path.equals("/api/posts")) {
                 controller.save(req.getReader(), resp);
                 return;
