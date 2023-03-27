@@ -35,6 +35,7 @@ public class MainServlet extends HttpServlet {
             if (method.equals(GET) && path.equals(POSTS_POST)) {
                 controller.all(resp);
                 return;
+
             }
             if (method.equals(GET) && path.matches(POSTS_POST)) {
                 // easy way
